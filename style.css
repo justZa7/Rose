@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.main .text-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.text-content h1 {
+    display: inline-block;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.text-content span {
+    display: inline-block;
+    font-size: 3rem;
+    color: #000;
+    font-weight: 800;
+}
+
+.main-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    right: 10px;
+    position: absolute;
+    margin: 0.2rem 0;
+    background-color: #000;
+    padding: 2px 6px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.main-link-expand {
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    padding: 12px 0px;
+    height: 100%;
+}
+
+.main-link-expand li {
+    margin-bottom: 1rem;
+}
+
+.main-link-expand.expand {
+    display: inline-block;
+}
+
+.main-link a {
+    color: #f3f4f6;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.support-links h2 {
+    color: #000;
+}
+
+.btn-large {
+    display: flex;
+    background-color: #000;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 12px 8px;
+    align-items: center;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.btn-large i {
+    color: #f3f4f6;
+}
+
+.btn-large h3 {
+    color: #f3f4f6;
+}
+
+.albums {
+    padding: 1rem;
+}
+
+.item {
+    display: flex;
+    max-width: 171px;
+    border-radius: 6px;
+}
+
+.horizontal-image-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.horizontal-image-scroll {
+    overflow-x: auto;
+}
+
+.horizontal-image-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.horizontal-image-scroll {
+    scrollbar-color: transparent transparent;
+}
+
+.footer-container {
+    width: 100%;
+    gap: 2rem;
+    display: grid;
+}
+
+.footer-container h2 {
+    text-align: center;
+}
+
+
+.show-btn-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.show-btn-container button {
+    border: none;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 1.4rem;
+}
+
+.main-card-link-wrapper {
+    display: none;
+}
+
+.main-card-link-wrapper.open {
+    display: grid;
+    gap: 1rem;
+}
+
+.btn-show {
+    transition: transform 0.5 ease;
+    background-color: transparent;
+}
+
+.btn-show.rotate {
+    transform: rotate(180deg);
+}
+
+.main-card-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    border-radius: 12px;
+    cursor: pointer;
+    max-width: 40rem;
+    width: 90%;
+    gap: 1rem;
+    padding: 1rem;
+    margin-inline: auto;
+}
+
+.main-card-link span {
+    color: #f3f4f6;
+    font-size: 1.2rem;
+}
+
+.main-card-link p {
+    color: #f3f4f6;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.main-card-link i {
+    color: #f3f4f6;
+    font-size: 1rem;
+}
+
+.bg-1 {
+    display: none;
+    opacity: 0;
+}
+
+.bg-container {
+    display: none;
+    opacity: 0;
+}
+
+.bg-2 {
+    display: none;
+    opacity: 0;
+}
+
+.toast-container {
+    background-color: black;
+    margin-top: 1rem;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    animation: toast 300ms ease-in-out ;
+}
+
+#toast {
+    width: max-content;
+    position: fixed;
+    align-self: center;
+    z-index: 1;
+    top: 0;
+}
+
+
+@media (width > 768px) and (width <= 1024px) {
+    .bg-container {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        z-index: -1;
+        opacity: 1;
+        display: block;
+    }
+
+    .bg-1 {
+        position: absolute;
+        max-width: 320px;
+        left: -160px;
+        z-index: -1;
+        opacity: 1;
+        bottom: 0;
+        display: block;
+    } 
+
+    .bg-2 {
+        position: relative;
+        max-width: 320px;
+        right: -700px;
+        z-index: -1;
+        opacity: 1;
+        bottom: -6px;
+        display: block;
+    } 
+    body {
+        overflow-x: hidden;
+    }
+}
+
+@media (width > 1080px) {
+    .bg-container {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        z-index: -1;
+        opacity: 1;
+        display: block;
+    }
+
+    .bg-1 {
+        position: absolute;
+        max-width: 320px;
+        left: -220px;
+        z-index: -1;
+        opacity: 1;
+        bottom: 0;
+        display: block;
+    } 
+
+    .bg-2 {
+        position: relative;
+        max-width: 320px;
+        right: -1080px;
+        z-index: -1;
+        opacity: 1;
+        bottom: -6px;
+        display: block;
+    } 
+
+    body {
+        display: flex;
+        justify-content: center; 
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    .main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .albums {
+        width: 100%;
+    }
+    .item {
+        max-width: 157px;
+    }
+    .main-link {
+        right: 20px;
+    }
+    #toast {
+        align-self: center;
+        position: fixed;
+        top: 0;
+        justify-self: center;
+    }
+}   
+
+
+@keyframes toast {
+    from {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gone {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
